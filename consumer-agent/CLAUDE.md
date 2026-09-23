@@ -23,7 +23,8 @@ committed.
 
 ## Stack
 
-To be decided. Record language, framework and version here once chosen.
+Python 3.11 or newer, standard library only: no framework and nothing to
+install.
 
 ## Owners
 
@@ -31,7 +32,18 @@ To be filled in: names or roles of the people on this team.
 
 ## How to run
 
-To be filled in once there is code.
+From the repository root:
+
+```bash
+python3 consumer-agent/src/coffee_machine.py
+curl http://127.0.0.1:8000/coffee-machine   # in a second terminal, or open it in a browser
+```
+
+The first command serves the mock office coffee machine from
+`mock-data/coffee-machine.json`. The file is reread on every request, so
+editing it changes the response without a restart. Stop the server with
+Ctrl+C. Change `PORT` in the file if 8000 is taken. On Windows, use `py`
+instead of `python3`.
 
 ## Docs
 
