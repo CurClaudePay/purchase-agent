@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent-identity.schema.json",
+  "title": "AgentIdentity",
+  "description": "Identifies an agent and the consumer it acts for.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["agentId", "onBehalfOf", "name", "publicKey", "issuedAt"],
+  "properties": {
+    "agentId": { "type": "string" },
+    "onBehalfOf": { "type": "string", "description": "consumerId" },
+    "name": { "type": "string" },
+    "publicKey": { "type": "string", "description": "Used to verify signed requests. Sandbox keys only." },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "revokedAt": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

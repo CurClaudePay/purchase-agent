@@ -1,0 +1,6 @@
+[
+  { "productId": "prod-beans-espresso-1kg", "merchantId": "merch-001", "name": "Espresso beans 1 kg", "category": "coffee_beans", "price": 1899, "currency": "EUR", "inStock": true },
+  { "productId": "prod-beans-decaf-500g", "merchantId": "merch-001", "name": "Decaf beans 500 g", "category": "coffee_beans", "price": 1149, "currency": "EUR", "inStock": true },
+  { "productId": "prod-descaler", "merchantId": "merch-001", "name": "Descaler", "category": "maintenance", "price": 799, "currency": "EUR", "inStock": true },
+  { "productId": "prod-grinder", "merchantId": "merch-001", "name": "Burr grinder", "category": "appliances", "price": 12900, "currency": "EUR", "inStock": true }
+]

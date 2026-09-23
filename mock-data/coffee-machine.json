@@ -1,0 +1,7 @@
+{
+  "deviceId": "dev-coffee-001",
+  "model": "Brewmaster 3000 (fictional)",
+  "ownerConsumerId": "cons-001",
+  "beanHopper": { "capacityGrams": 1000, "currentGrams": 120, "reorderThresholdGrams": 150 },
+  "preferredProductId": "prod-beans-espresso-1kg"
+}
