@@ -16,6 +16,30 @@
     "inStock": true
   },
   {
+    "productId": "prod-milk-oat-6x1l",
+    "merchantId": "merch-001",
+    "name": "Oat milk barista, 6 x 1 l",
+    "category": "milk",
+    "price": { "value": 1350, "currency": "EUR" },
+    "inStock": true
+  },
+  {
+    "productId": "prod-descaler-kit",
+    "merchantId": "merch-001",
+    "name": "Descaling kit",
+    "category": "maintenance",
+    "price": { "value": 2450, "currency": "EUR" },
+    "inStock": true
+  },
+  {
+    "productId": "svc-machine-service",
+    "merchantId": "merch-001",
+    "name": "On-site machine service visit",
+    "category": "maintenance",
+    "price": { "value": 8900, "currency": "EUR" },
+    "inStock": true
+  },
+  {
     "productId": "prod-grinder-premium",
     "merchantId": "merch-001",
     "name": "Premium burr grinder",

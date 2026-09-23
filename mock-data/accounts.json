@@ -2,9 +2,12 @@
   "consumers": [
     {
       "consumerId": "cons-001",
-      "name": "Alex Example",
+      "name": "Office Manager (fictional)",
       "walletAccountId": "wal-cons-001",
-      "balance": { "value": 25000, "currency": "EUR" }
+      "balance": {
+        "value": 25000,
+        "currency": "EUR"
+      }
     }
   ],
   "agents": [
@@ -12,6 +15,12 @@
       "agentId": "agent-001",
       "consumerId": "cons-001",
       "provider": "PoC Consumer Agent"
+    },
+    {
+      "agentId": "agent-999",
+      "consumerId": "cons-001",
+      "provider": "Unregistered agent",
+      "note": "Not registered with the Trust Layer; used for the unauthorised-agent scenario"
     }
   ],
   "merchants": [
@@ -19,7 +28,10 @@
       "merchantId": "merch-001",
       "name": "Bean There Coffee (fictional)",
       "walletAccountId": "wal-merch-001",
-      "balance": { "value": 0, "currency": "EUR" }
+      "balance": {
+        "value": 0,
+        "currency": "EUR"
+      }
     }
   ]
 }

@@ -1,12 +1,30 @@
 {
   "deviceId": "dev-coffee-001",
   "ownerConsumerId": "cons-001",
+  "location": "Office, 3rd floor kitchen (fictional)",
   "model": "Brewmaster 3000 (fictional)",
-  "consumable": {
-    "type": "coffee-beans",
-    "capacityGrams": 1000,
-    "levelGrams": 120,
-    "reorderThresholdGrams": 150
-  },
-  "preferredProductId": "prod-beans-arabica-1kg"
+  "consumables": [
+    {
+      "type": "coffee-beans",
+      "unit": "grams",
+      "capacity": 1000,
+      "level": 120,
+      "reorderThreshold": 150,
+      "preferredProductId": "prod-beans-arabica-1kg"
+    },
+    {
+      "type": "milk",
+      "unit": "millilitres",
+      "capacity": 2000,
+      "level": 1400,
+      "reorderThreshold": 500,
+      "preferredProductId": "prod-milk-oat-6x1l"
+    }
+  ],
+  "maintenance": {
+    "cupsSinceDescale": 1850,
+    "descaleEveryCups": 2000,
+    "preferredProductId": "prod-descaler-kit",
+    "lastServiceDate": "2026-03-12"
+  }
 }

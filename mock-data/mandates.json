@@ -1,0 +1,40 @@
+[
+  {
+    "mandateId": "mand-001",
+    "consumerId": "cons-001",
+    "agentId": "agent-001",
+    "instruction": "Keep the office coffee machine running: beans, milk and maintenance, max EUR 150 a month and EUR 100 per order.",
+    "scope": {
+      "categories": ["coffee", "milk", "maintenance"],
+      "merchantIds": ["merch-001"]
+    },
+    "limits": {
+      "currency": "EUR",
+      "maxPerTransaction": 10000,
+      "maxPerPeriod": 15000,
+      "period": "month"
+    },
+    "validFrom": "2026-09-28T00:00:00Z",
+    "validUntil": "2026-12-31T23:59:59Z",
+    "status": "active"
+  },
+  {
+    "mandateId": "mand-002",
+    "consumerId": "cons-001",
+    "agentId": "agent-001",
+    "instruction": "Same as mand-001, revoked by the consumer. Used for the revocation scenario.",
+    "scope": {
+      "categories": ["coffee", "milk", "maintenance"],
+      "merchantIds": ["merch-001"]
+    },
+    "limits": {
+      "currency": "EUR",
+      "maxPerTransaction": 10000,
+      "maxPerPeriod": 15000,
+      "period": "month"
+    },
+    "validFrom": "2026-09-28T00:00:00Z",
+    "validUntil": "2026-12-31T23:59:59Z",
+    "status": "revoked"
+  }
+]
