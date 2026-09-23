@@ -1,50 +1,44 @@
-# Wero agentic payments PoC
-
-Read this file at the start of every session. Team folders may add their own
-`CLAUDE.md` with stack and run notes; those add to this file, they do not replace it.
+# Wero agentic commerce PoC
 
 ## The case
-
-A household coffee machine runs low on beans. The consumer's agent notices,
-finds a replacement at a merchant, and pays with Wero within limits the
-consumer set in advance (the **mandate**). The consumer is not asked to approve
-each purchase, but every step must be traceable to that mandate.
-
-The demo covers one happy path end to end, plus the refusals that prove the
-controls work (over limit, expired mandate, unknown agent, wrong merchant).
-
-## Flow
-
-1. **Consumer agent** receives the instruction ("keep me in coffee, max EUR 40 a month")
-   and asks the consumer for a mandate.
-2. **Trust Layer** registers the mandate and the agent identity.
-3. The agent requests a catalogue and an offer from the **Merchant**.
-4. The agent asks the **Trust Layer** for an authorisation against the mandate.
-5. The **Wallet** checks funds and limits and settles on the sandbox.
-6. The **Merchant** confirms the order and delivery.
-7. Every step is written to the **Trust Layer** audit trail.
+A consumer gives an agent a bounded mandate to keep an eye on the office
+coffee machine and to act when needed: new coffee beans, milk, maintenance.
+The goal is one complete agentic purchase, end to end, on the sandbox,
+demonstrated to leadership on Wednesday 28 October.
 
 ## Teams and folders
-
-| Folder            | Team           | Owns                                                        |
-|-------------------|----------------|-------------------------------------------------------------|
-| `contracts/`      | Trust Layer    | Mandate, agent identity and authorisation schemas           |
-| `consumer-agent/` | Consumer Agent | The instruction, the mandate request and the acting agent   |
-| `merchant/`       | Merchant       | Catalogue, offer, order and delivery                        |
-| `trust-layer/`    | Trust Layer    | Mandate validation and the audit trail                      |
-| `wallet/`         | Wallet         | Funds, limits and settlement on the sandbox                 |
-| `mock-data/`      | Shared         | Fictional data used by every team                           |
+- consumer-agent/  the instruction, the mandate request and the agent that acts on it
+- merchant/        catalogue, offer, order and delivery
+- trust-layer/     mandate validation, agent identity, authorisation, audit trail
+- wallet/          funds, limits and settlement on the sandbox
+- contracts/       shared schemas, owned by the Trust Layer. Other teams read
+                   them and never edit them directly; propose changes in a pull
+                   request for the Trust Layer.
+- mock-data/       shared fictional data
 
 ## Rules
+- Mock data only. No real iDEAL, customer or payment data.
+- No secrets, keys or tokens in code, prompts or commits.
+- Nothing settles without a valid mandate from the Trust Layer.
+- Build against contracts/. Where a contract does not exist yet, stub it
+  behind one interface so the real component can be swapped in later.
+- Small commits, one change each, with the reason in the message.
 
-- **Stay in your folder.** Change another team's folder only when that team asks you to.
-- **Contracts belong to the Trust Layer.** Every team reads `contracts/`. Changes
-  need Trust Layer review. Do not copy a schema into a team folder; reference it.
-- **Fictional data only.** No real names, IBANs, phone numbers, card numbers,
-  credentials or customer data anywhere in the repo. New data goes in `mock-data/`.
-- **Sandbox only.** Nothing in this repo moves real money or calls a production endpoint.
-- **No secrets in git.** Keys and tokens go in local `.env` files, which are ignored.
-- **Fail closed.** If a mandate, identity or authorisation can't be validated, refuse
-  the payment and log why.
-- **Everything is audited.** Every decision that affects a payment writes an audit event.
-- **Amounts are integer minor units** (cents) with an ISO 4217 currency code; timestamps are ISO 8601 UTC.
+## Demo bar
+- Week 1 (30 Sep): a working skeleton per component with mock data
+- Week 2 (7 Oct): one purchase across the chain on the happy path, stubs allowed
+- Week 3 (14 Oct): real integration, mandate limits enforced, approval notification works
+- Week 4 (21 Oct): failure scenarios (limit exceeded, revocation, unauthorised agent)
+  and a visible audit trail, then feature freeze
+- Week 5 (28 Oct): final presentation
+
+## Models
+- Building: Claude Code is the development tool for every team.
+- Running: the agent inside the product calls its language model through one
+  interface. Mistral is the default, in line with the European stack. Claude
+  runs alongside it as a comparison until the choice on Wednesday 7 October.
+- Model keys live in environment variables, never in the repository.
+
+## Stack
+Each team records its language, framework and how to run its component in
+its own CLAUDE.md.
