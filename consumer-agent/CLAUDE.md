@@ -1,27 +1,40 @@
-# Consumer Agent team
+# Consumer agent: team notes
 
-Read the root `CLAUDE.md` first; its rules apply here too.
+Read the root `CLAUDE.md` first. This file adds what is specific to this team.
 
-## What this folder does
+## What this team builds
 
-Turns a low-stock signal from the coffee machine into a purchase instruction,
-requests a mandate from the consumer, and acts on it: gets an offer from the
-merchant, asks the trust layer for authorisation, and has the wallet settle.
+- **Instruction**: how the consumer states the goal and limits, for example
+  "keep the office coffee machine stocked with beans and milk and book
+  maintenance when due; at most EUR 100 per order and EUR 250 per month, only
+  from approved merchants".
+- **Mandate request**: turning that instruction into a mandate that matches
+  `contracts/mandate`, and getting it signed by the consumer.
+- **The agent**: watches the coffee machine, decides when beans, milk or
+  maintenance are needed, asks the merchant for an offer, checks it against
+  the mandate and places the order.
+
+## Language model
+
+The agent calls its language model through one interface. Mistral is the
+default; Claude runs alongside it as a comparison until the choice on
+Wednesday 7 October. Model keys come from environment variables and are never
+committed.
 
 ## Stack
 
-TODO: not chosen yet.
+To be decided. Record language, framework and version here once chosen.
 
 ## Owners
 
-TODO: add names and contact.
+To be filled in: names or roles of the people on this team.
 
 ## How to run
 
-TODO: add once there is code.
+To be filled in once there is code.
 
 ## Docs
 
-- `docs/requirements.md`: what the agent must do
-- `docs/scope.md`: what is in and out of this PoC
-- `docs/dependencies.md`: what we need from the other teams
+- [`docs/requirements.md`](docs/requirements.md): what the agent must do
+- [`docs/scope.md`](docs/scope.md): what is in and out of this PoC
+- [`docs/dependencies.md`](docs/dependencies.md): what we need from other teams

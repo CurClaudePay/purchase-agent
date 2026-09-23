@@ -1,6 +1,37 @@
 [
-  { "productId": "prod-beans-espresso-1kg", "merchantId": "merch-001", "name": "Espresso beans 1 kg", "category": "coffee_beans", "price": 1899, "currency": "EUR", "inStock": true },
-  { "productId": "prod-beans-decaf-500g", "merchantId": "merch-001", "name": "Decaf beans 500 g", "category": "coffee_beans", "price": 1149, "currency": "EUR", "inStock": true },
-  { "productId": "prod-descaler", "merchantId": "merch-001", "name": "Descaler", "category": "maintenance", "price": 799, "currency": "EUR", "inStock": true },
-  { "productId": "prod-grinder", "merchantId": "merch-001", "name": "Burr grinder", "category": "appliances", "price": 12900, "currency": "EUR", "inStock": true }
+  {
+    "sku": "beans-house-blend-1kg",
+    "name": "House blend coffee beans, 1 kg",
+    "category": "beans",
+    "price": { "amount": "19.95", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "beans-house-blend-3kg",
+    "name": "House blend coffee beans, 3 x 1 kg",
+    "category": "beans",
+    "price": { "amount": "54.00", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "milk-semi-skimmed-1l",
+    "name": "Semi-skimmed milk, 1 litre",
+    "category": "milk",
+    "price": { "amount": "1.29", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "milk-semi-skimmed-6x1l",
+    "name": "Semi-skimmed milk, 6 x 1 litre",
+    "category": "milk",
+    "price": { "amount": "7.20", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "service-descale-visit",
+    "name": "Descaling and maintenance visit",
+    "category": "maintenance",
+    "price": { "amount": "89.00", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  }
 ]

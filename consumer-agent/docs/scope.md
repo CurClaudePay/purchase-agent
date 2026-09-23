@@ -1,12 +1,17 @@
 # Scope: consumer agent
 
-## In
-- One consumer, one coffee machine, one merchant, one product category.
-- The happy path and the refusals listed in `contracts/authorisation.schema.json`.
-- Sandbox wallet and fictional data only.
+## In scope
 
-## Out
-- Real payments, real identities, production Wero endpoints.
-- Price comparison across merchants.
+- One consumer, one office coffee machine.
+- Three needs: coffee beans, milk and maintenance.
+- One active mandate at a time.
+- Orders triggered by mock "beans low", "milk low" and "maintenance due" events.
+- Happy path plus the failure scenarios for the week 4 demo: limit exceeded,
+  mandate revoked, unauthorised agent.
+- An approval notification to the consumer.
+
+## Out of scope
+
+- Real devices, real payments, real iDEAL or customer data.
+- Price comparison across many merchants.
 - Returns, refunds and disputes.
-- Consumer-facing UI beyond what the demo needs.

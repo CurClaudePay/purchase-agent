@@ -1,27 +1,20 @@
 {
   "consumers": [
-    { "consumerId": "cons-001", "name": "Alex Example", "walletId": "wal-001", "deliveryAddress": "1 Sample Street, 1000 AA Testville" }
+    {
+      "id": "consumer-001",
+      "name": "Test Consumer",
+      "walletAccountId": "wallet-sandbox-c001"
+    }
   ],
   "merchants": [
-    { "merchantId": "merch-001", "name": "Bean There Coffee (fictional)", "walletId": "wal-900" }
-  ],
-  "wallets": [
-    { "walletId": "wal-001", "ownerId": "cons-001", "balance": 25000, "currency": "EUR", "dailyLimit": 10000 },
-    { "walletId": "wal-900", "ownerId": "merch-001", "balance": 0, "currency": "EUR" }
-  ],
-  "agents": [
-    { "agentId": "agent-001", "onBehalfOf": "cons-001", "name": "Coffee reorder agent", "publicKey": "SANDBOX-KEY-NOT-REAL", "issuedAt": "2026-09-01T00:00:00Z", "revokedAt": null }
-  ],
-  "mandates": [
     {
-      "mandateId": "mand-001",
-      "consumerId": "cons-001",
-      "agentId": "agent-001",
-      "scope": { "merchantIds": ["merch-001"], "productCategories": ["coffee_beans"] },
-      "limits": { "currency": "EUR", "maxAmountPerTransaction": 2500, "maxAmountPerPeriod": 5000, "period": "month", "maxTransactionsPerPeriod": 3 },
-      "validFrom": "2026-09-01T00:00:00Z",
-      "validUntil": "2027-08-31T23:59:59Z",
-      "status": "active"
+      "id": "merchant-001",
+      "name": "Fictional Office Coffee Supplies",
+      "walletAccountId": "wallet-sandbox-m001"
     }
+  ],
+  "walletAccounts": [
+    { "id": "wallet-sandbox-c001", "balance": { "amount": "150.00", "currency": "EUR" } },
+    { "id": "wallet-sandbox-m001", "balance": { "amount": "0.00", "currency": "EUR" } }
   ]
 }

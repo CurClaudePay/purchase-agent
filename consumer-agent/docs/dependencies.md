@@ -1,9 +1,15 @@
 # Dependencies: consumer agent
 
-| From        | What we need                                               | Contract |
-|-------------|------------------------------------------------------------|----------|
-| Trust Layer | Mandate creation and lookup; authorisation decisions       | `mandate.schema.json`, `authorisation.schema.json` |
-| Trust Layer | Registration of our agent identity                         | `agent-identity.schema.json` |
-| Merchant    | Catalogue lookup, offer for a product, order confirmation  | TODO: offer/order contract |
-| Wallet      | Settlement given an authorisation token                    | TODO: settlement contract |
-| Shared      | Coffee machine, product and account fixtures               | `mock-data/` |
+What this team needs from other teams. Keep this list current. Where a
+dependency is not ready, stub it behind one interface.
+
+| From        | What we need                                                   | Status |
+|-------------|----------------------------------------------------------------|--------|
+| Trust Layer | `contracts/mandate` schema, including revocation               | open   |
+| Trust Layer | `contracts/agent-identity` schema                              | open   |
+| Trust Layer | Authorisation endpoint, see `contracts/authorisation`          | open   |
+| Trust Layer | `contracts/audit-event` schema                                 | open   |
+| Merchant    | Catalogue and offer API for beans, milk and maintenance        | open   |
+| Merchant    | Order API that accepts an agent identity and mandate reference | open   |
+| Wallet      | Sandbox account for the fictional consumer                     | open   |
+| Shared      | Office coffee machine and consumer in `mock-data/`             | open   |
