@@ -3,21 +3,36 @@
   "ownerConsumerId": "cons-001",
   "location": "Office, 3rd floor kitchen (fictional)",
   "model": "Brewmaster 3000 (fictional)",
+  "usageAssumptions": {
+    "cupsPerWorkday": 100,
+    "gramsBeansPerCup": 8,
+    "shareOfCupsWithMilk": 0.3,
+    "millilitresMilkPerMilkCup": 100,
+    "note": "Reorder point = daily usage x (lead time + safety days). Levels are for stock in the cupboard, not the hopper or milk container in the machine."
+  },
   "consumables": [
     {
       "type": "coffee-beans",
       "unit": "grams",
-      "capacity": 1000,
-      "level": 120,
-      "reorderThreshold": 150,
+      "dailyUsage": 800,
+      "leadTimeWorkdays": 2,
+      "safetyWorkdays": 1,
+      "reorderPoint": 2500,
+      "reorderQuantity": 5000,
+      "stock": 2000,
+      "machineHopper": { "capacity": 1000, "level": 400 },
       "preferredProductId": "prod-beans-arabica-1kg"
     },
     {
       "type": "milk",
       "unit": "millilitres",
-      "capacity": 2000,
-      "level": 1400,
-      "reorderThreshold": 500,
+      "dailyUsage": 3000,
+      "leadTimeWorkdays": 2,
+      "safetyWorkdays": 1,
+      "reorderPoint": 9000,
+      "reorderQuantity": 18000,
+      "stock": 15000,
+      "machineContainer": { "capacity": 2000, "level": 1400 },
       "preferredProductId": "prod-milk-oat-6x1l"
     }
   ],
