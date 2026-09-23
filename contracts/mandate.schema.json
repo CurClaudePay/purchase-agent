@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mandate.schema.json",
+  "title": "Mandate",
+  "description": "Who authorises what: the consumer lets one agent buy within these bounds.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["mandateId", "consumerId", "agentId", "purpose", "merchantIds", "categories", "limits", "validFrom", "validUntil", "status", "signature"],
+  "additionalProperties": false,
+  "properties": {
+    "mandateId": { "type": "string" },
+    "consumerId": { "type": "string", "description": "e.g. consumer-001" },
+    "agentId": { "type": "string" },
+    "purpose": { "type": "string", "description": "The consumer's instruction in plain words." },
+    "merchantIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["beans", "milk", "maintenance"] },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "limits": {
+      "type": "object",
+      "required": ["perOrder", "perPeriod", "period"],
+      "additionalProperties": false,
+      "properties": {
+        "perOrder": { "$ref": "money.schema.json" },
+        "perPeriod": { "$ref": "money.schema.json" },
+        "period": { "type": "string", "enum": ["week", "month"] },
+        "approvalAbove": {
+          "$ref": "money.schema.json",
+          "description": "Orders above this amount need the consumer's approval before settlement."
+        }
+      }
+    },
+    "validFrom": { "type": "string", "format": "date-time" },
+    "validUntil": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["pending_signature", "active", "revoked", "expired"] },
+    "revokedAt": { "type": ["string", "null"], "format": "date-time" },
+    "signature": {
+      "type": "object",
+      "description": "The consumer's signature over the mandate. Sandbox keys only.",
+      "required": ["signedBy", "signedAt", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "signedBy": { "type": "string" },
+        "signedAt": { "type": "string", "format": "date-time" },
+        "value": { "type": "string" }
+      }
+    }
+  }
+}

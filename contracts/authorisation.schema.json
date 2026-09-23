@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "authorisation.schema.json",
+  "title": "Authorisation",
+  "description": "Request and response for checking an order against a mandate. Nothing settles without an approved response.",
+  "version": "0.1.0",
+  "$defs": {
+    "request": {
+      "type": "object",
+      "required": ["requestId", "purchaseId", "mandateId", "agentId", "agentSignature", "merchantId", "offerId", "sku", "category", "quantity", "total", "createdAt"],
+      "additionalProperties": false,
+      "properties": {
+        "requestId": { "type": "string" },
+        "purchaseId": { "type": "string", "description": "Correlates every step of one purchase, including audit events." },
+        "mandateId": { "type": "string" },
+        "agentId": { "type": "string" },
+        "agentSignature": { "type": "string", "description": "The agent's signature over this request." },
+        "merchantId": { "type": "string" },
+        "offerId": { "type": "string" },
+        "sku": { "type": "string" },
+        "category": { "type": "string", "enum": ["beans", "milk", "maintenance"] },
+        "quantity": { "type": "integer", "minimum": 1 },
+        "total": { "$ref": "money.schema.json" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "response": {
+      "type": "object",
+      "required": ["requestId", "purchaseId", "outcome", "decidedAt"],
+      "additionalProperties": false,
+      "properties": {
+        "requestId": { "type": "string" },
+        "purchaseId": { "type": "string" },
+        "outcome": { "type": "string", "enum": ["approved", "rejected", "approval_required"] },
+        "reason": {
+          "type": "string",
+          "description": "Set when outcome is rejected or approval_required.",
+          "enum": [
+            "mandate_not_found",
+            "mandate_not_active",
+            "mandate_revoked",
+            "mandate_expired",
+            "agent_not_authorised",
+            "invalid_signature",
+            "merchant_not_allowed",
+            "category_not_allowed",
+            "per_order_limit_exceeded",
+            "period_limit_exceeded",
+            "above_approval_threshold"
+          ]
+        },
+        "authorisationToken": { "type": "string", "description": "Set when approved. The wallet requires it to settle." },
+        "remainingPeriodBudget": { "$ref": "money.schema.json" },
+        "decidedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "oneOf": [
+    { "$ref": "#/$defs/request" },
+    { "$ref": "#/$defs/response" }
+  ]
+}

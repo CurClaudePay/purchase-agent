@@ -1,0 +1,9 @@
+{
+  "agentId": "agent-001",
+  "onBehalfOf": "consumer-001",
+  "displayName": "Office coffee agent",
+  "publicKey": "SANDBOX-KEY-NOT-REAL",
+  "issuedAt": "2026-09-29T09:00:00Z",
+  "status": "active",
+  "revokedAt": null
+}

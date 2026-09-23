@@ -1,0 +1,8 @@
+{
+  "requestId": "authreq-001",
+  "purchaseId": "purchase-001",
+  "outcome": "approved",
+  "authorisationToken": "SANDBOX-TOKEN-NOT-REAL",
+  "remainingPeriodBudget": { "amount": "230.05", "currency": "EUR" },
+  "decidedAt": "2026-10-01T08:00:01Z"
+}

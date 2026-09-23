@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "audit-event.schema.json",
+  "title": "AuditEvent",
+  "description": "One logged step in the flow. Every team emits these; the Trust Layer stores them.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["eventId", "purchaseId", "occurredAt", "source", "actorId", "type", "outcome"],
+  "additionalProperties": false,
+  "properties": {
+    "eventId": { "type": "string" },
+    "purchaseId": { "type": ["string", "null"], "description": "Null for events outside a purchase, such as signing a mandate." },
+    "occurredAt": { "type": "string", "format": "date-time" },
+    "source": { "type": "string", "enum": ["consumer-agent", "merchant", "trust-layer", "wallet"] },
+    "actorId": { "type": "string", "description": "The agent, consumer, merchant or service that acted." },
+    "type": {
+      "type": "string",
+      "enum": [
+        "mandate.requested",
+        "mandate.signed",
+        "mandate.revoked",
+        "device.need_detected",
+        "offer.requested",
+        "offer.received",
+        "order.decided",
+        "authorisation.requested",
+        "authorisation.decided",
+        "approval.requested",
+        "approval.answered",
+        "payment.settled",
+        "payment.failed",
+        "order.placed",
+        "delivery.confirmed"
+      ]
+    },
+    "outcome": { "type": "string", "enum": ["success", "rejected", "failed", "pending"] },
+    "mandateId": { "type": ["string", "null"] },
+    "reason": { "type": ["string", "null"], "description": "Why, in plain words or as an authorisation reason code." },
+    "amount": { "$ref": "money.schema.json" },
+    "details": { "type": "object", "description": "Step-specific data. No secrets or personal data." }
+  }
+}

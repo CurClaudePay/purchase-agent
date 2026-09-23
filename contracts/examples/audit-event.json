@@ -1,0 +1,13 @@
+{
+  "eventId": "audit-0001",
+  "purchaseId": "purchase-001",
+  "occurredAt": "2026-10-01T08:00:01Z",
+  "source": "trust-layer",
+  "actorId": "trust-layer",
+  "type": "authorisation.decided",
+  "outcome": "success",
+  "mandateId": "mandate-001",
+  "reason": null,
+  "amount": { "amount": "19.95", "currency": "EUR" },
+  "details": { "requestId": "authreq-001" }
+}
