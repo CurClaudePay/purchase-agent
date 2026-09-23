@@ -2,9 +2,12 @@
 
 ## In scope
 
-- One consumer, one agent, one coffee machine, one merchant.
-- One happy-path purchase and the refusal scenarios listed in the root `README.md`.
-- Mandate creation, confirmation and use.
+- One consumer, one agent, one office coffee machine, one merchant.
+- Purchases of coffee beans, milk and maintenance.
+- One happy-path purchase (week 2) and the failure scenarios for week 4:
+  limit exceeded, revocation, unauthorised agent.
+- Mandate creation, confirmation and use, and the approval notification.
+- A model interface with Mistral and Claude behind it.
 
 ## Out of scope
 
