@@ -1,0 +1,12 @@
+{
+  "deviceId": "dev-coffee-001",
+  "ownerConsumerId": "cons-001",
+  "model": "Brewmaster 3000 (fictional)",
+  "consumable": {
+    "type": "coffee-beans",
+    "capacityGrams": 1000,
+    "levelGrams": 120,
+    "reorderThresholdGrams": 150
+  },
+  "preferredProductId": "prod-beans-arabica-1kg"
+}

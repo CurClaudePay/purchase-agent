@@ -1,0 +1,26 @@
+[
+  {
+    "productId": "prod-beans-arabica-1kg",
+    "merchantId": "merch-001",
+    "name": "Arabica whole beans, 1 kg",
+    "category": "coffee",
+    "price": { "value": 1899, "currency": "EUR" },
+    "inStock": true
+  },
+  {
+    "productId": "prod-beans-robusta-1kg",
+    "merchantId": "merch-001",
+    "name": "Robusta whole beans, 1 kg",
+    "category": "coffee",
+    "price": { "value": 1499, "currency": "EUR" },
+    "inStock": true
+  },
+  {
+    "productId": "prod-grinder-premium",
+    "merchantId": "merch-001",
+    "name": "Premium burr grinder",
+    "category": "appliances",
+    "price": { "value": 12900, "currency": "EUR" },
+    "inStock": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "authorisation.schema.json",
+  "title": "Authorisation",
+  "description": "The Trust Layer's decision on one payment request against a mandate.",
+  "type": "object",
+  "required": ["authorisationId", "mandateId", "agentId", "merchantId", "offerId", "amount", "decision", "decidedAt"],
+  "properties": {
+    "authorisationId": { "type": "string" },
+    "mandateId": { "type": "string" },
+    "agentId": { "type": "string" },
+    "merchantId": { "type": "string" },
+    "offerId": { "type": "string" },
+    "amount": {
+      "type": "object",
+      "required": ["value", "currency"],
+      "properties": {
+        "value": { "type": "integer", "minimum": 1 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" }
+      }
+    },
+    "decision": { "enum": ["approved", "refused"] },
+    "reason": {
+      "enum": ["within_mandate", "over_transaction_limit", "over_period_limit", "mandate_expired", "mandate_revoked", "merchant_not_allowed", "category_not_allowed", "unknown_agent"]
+    },
+    "decidedAt": { "type": "string", "format": "date-time" },
+    "expiresAt": { "type": "string", "format": "date-time" }
+  }
+}

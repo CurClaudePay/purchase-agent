@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mandate.schema.json",
+  "title": "Mandate",
+  "description": "The limits within which a consumer allows an agent to pay on their behalf.",
+  "type": "object",
+  "required": ["mandateId", "consumerId", "agentId", "scope", "limits", "validFrom", "validUntil", "status"],
+  "properties": {
+    "mandateId": { "type": "string" },
+    "consumerId": { "type": "string" },
+    "agentId": { "type": "string" },
+    "instruction": { "type": "string", "description": "The consumer's instruction in their own words." },
+    "scope": {
+      "type": "object",
+      "required": ["categories", "merchantIds"],
+      "properties": {
+        "categories": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "merchantIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["currency", "maxPerTransaction", "maxPerPeriod", "period"],
+      "properties": {
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "maxPerTransaction": { "type": "integer", "minimum": 1 },
+        "maxPerPeriod": { "type": "integer", "minimum": 1 },
+        "period": { "enum": ["day", "week", "month"] }
+      }
+    },
+    "validFrom": { "type": "string", "format": "date-time" },
+    "validUntil": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["pending", "active", "revoked", "expired"] }
+  }
+}
