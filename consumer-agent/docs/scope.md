@@ -2,15 +2,16 @@
 
 ## In scope
 
-- One consumer, one coffee machine, one product type (capsules).
+- One consumer, one office coffee machine.
+- Three needs: coffee beans, milk and maintenance.
 - One active mandate at a time.
-- Reorder triggered by a mock "capsules low" event.
-- Happy path and the main rejections: over the per-order limit, over the
-  period budget, merchant not allowed, mandate expired.
+- Orders triggered by mock "beans low", "milk low" and "maintenance due" events.
+- Happy path plus the failure scenarios for the week 4 demo: limit exceeded,
+  mandate revoked, unauthorised agent.
+- An approval notification to the consumer.
 
 ## Out of scope
 
-- Real devices, real payments, real consumers.
+- Real devices, real payments, real iDEAL or customer data.
 - Price comparison across many merchants.
-- Changing or revoking a mandate from a UI (may be done by editing mock data).
 - Returns, refunds and disputes.
