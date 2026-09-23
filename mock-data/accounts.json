@@ -9,7 +9,7 @@
   "merchants": [
     {
       "id": "merchant-001",
-      "name": "Fictional Capsule Shop",
+      "name": "Fictional Office Coffee Supplies",
       "walletAccountId": "wallet-sandbox-m001"
     }
   ],

@@ -1,8 +1,15 @@
 {
-  "deviceId": "cm-0001",
-  "model": "Fictional Brew 3000",
+  "deviceId": "cm-office-0001",
+  "model": "Fictional Brew Office 5000",
+  "location": "Fictional Office, 2nd floor pantry",
   "ownerId": "consumer-001",
-  "capsuleType": "espresso-classic",
-  "capsulesRemaining": 4,
-  "reorderThreshold": 5
+  "supplies": {
+    "beans": { "sku": "beans-house-blend-1kg", "levelGrams": 350, "reorderBelowGrams": 500 },
+    "milk": { "sku": "milk-semi-skimmed-1l", "levelLitres": 1.5, "reorderBelowLitres": 2 }
+  },
+  "maintenance": {
+    "lastDescaled": "2026-08-01",
+    "descaleEveryDays": 60,
+    "serviceSku": "service-descale-visit"
+  }
 }

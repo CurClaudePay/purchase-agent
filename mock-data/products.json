@@ -1,26 +1,37 @@
 [
   {
-    "sku": "caps-espresso-classic-50",
-    "name": "Espresso Classic capsules, 50 pieces",
-    "capsuleType": "espresso-classic",
-    "quantity": 50,
-    "price": { "amount": "17.50", "currency": "EUR" },
+    "sku": "beans-house-blend-1kg",
+    "name": "House blend coffee beans, 1 kg",
+    "category": "beans",
+    "price": { "amount": "19.95", "currency": "EUR" },
     "merchantId": "merchant-001"
   },
   {
-    "sku": "caps-espresso-classic-100",
-    "name": "Espresso Classic capsules, 100 pieces",
-    "capsuleType": "espresso-classic",
-    "quantity": 100,
-    "price": { "amount": "32.00", "currency": "EUR" },
+    "sku": "beans-house-blend-3kg",
+    "name": "House blend coffee beans, 3 x 1 kg",
+    "category": "beans",
+    "price": { "amount": "54.00", "currency": "EUR" },
     "merchantId": "merchant-001"
   },
   {
-    "sku": "caps-lungo-50",
-    "name": "Lungo capsules, 50 pieces",
-    "capsuleType": "lungo",
-    "quantity": 50,
-    "price": { "amount": "18.50", "currency": "EUR" },
+    "sku": "milk-semi-skimmed-1l",
+    "name": "Semi-skimmed milk, 1 litre",
+    "category": "milk",
+    "price": { "amount": "1.29", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "milk-semi-skimmed-6x1l",
+    "name": "Semi-skimmed milk, 6 x 1 litre",
+    "category": "milk",
+    "price": { "amount": "7.20", "currency": "EUR" },
+    "merchantId": "merchant-001"
+  },
+  {
+    "sku": "service-descale-visit",
+    "name": "Descaling and maintenance visit",
+    "category": "maintenance",
+    "price": { "amount": "89.00", "currency": "EUR" },
     "merchantId": "merchant-001"
   }
 ]
