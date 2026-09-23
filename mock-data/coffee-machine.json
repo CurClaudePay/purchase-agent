@@ -1,0 +1,8 @@
+{
+  "deviceId": "cm-0001",
+  "model": "Fictional Brew 3000",
+  "ownerId": "consumer-001",
+  "capsuleType": "espresso-classic",
+  "capsulesRemaining": 4,
+  "reorderThreshold": 5
+}
