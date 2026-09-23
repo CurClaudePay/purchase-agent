@@ -3,7 +3,7 @@
     "mandateId": "mand-001",
     "consumerId": "cons-001",
     "agentId": "agent-001",
-    "instruction": "Keep the office coffee machine running: beans, milk and maintenance, max EUR 150 a month and EUR 100 per order.",
+    "instruction": "Keep the office coffee machine running: beans, milk and maintenance, max EUR 500 a month and EUR 100 per order.",
     "scope": {
       "categories": ["coffee", "milk", "maintenance"],
       "merchantIds": ["merch-001"]
@@ -11,7 +11,7 @@
     "limits": {
       "currency": "EUR",
       "maxPerTransaction": 10000,
-      "maxPerPeriod": 15000,
+      "maxPerPeriod": 50000,
       "period": "month"
     },
     "validFrom": "2026-09-28T00:00:00Z",
@@ -30,7 +30,7 @@
     "limits": {
       "currency": "EUR",
       "maxPerTransaction": 10000,
-      "maxPerPeriod": 15000,
+      "maxPerPeriod": 50000,
       "period": "month"
     },
     "validFrom": "2026-09-28T00:00:00Z",

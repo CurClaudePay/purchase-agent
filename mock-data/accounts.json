@@ -5,7 +5,7 @@
       "name": "Office Manager (fictional)",
       "walletAccountId": "wal-cons-001",
       "balance": {
-        "value": 25000,
+        "value": 100000,
         "currency": "EUR"
       }
     }
