@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "money.schema.json",
+  "title": "Money",
+  "description": "An amount as a decimal string with two places, as in mock-data/.",
+  "type": "object",
+  "required": ["amount", "currency"],
+  "additionalProperties": false,
+  "properties": {
+    "amount": { "type": "string", "pattern": "^\\d+\\.\\d{2}$" },
+    "currency": { "type": "string", "const": "EUR" }
+  }
+}

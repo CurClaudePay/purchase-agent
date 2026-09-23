@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent-identity.schema.json",
+  "title": "AgentIdentity",
+  "description": "How an agent identifies itself and proves it acts for a given consumer.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["agentId", "onBehalfOf", "displayName", "publicKey", "issuedAt", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "agentId": { "type": "string" },
+    "onBehalfOf": { "type": "string", "description": "The consumerId the agent acts for." },
+    "displayName": { "type": "string" },
+    "publicKey": { "type": "string", "description": "Verifies the agent's signed requests. Sandbox keys only." },
+    "issuedAt": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["active", "revoked"] },
+    "revokedAt": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

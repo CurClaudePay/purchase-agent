@@ -1,0 +1,19 @@
+{
+  "mandateId": "mandate-001",
+  "consumerId": "consumer-001",
+  "agentId": "agent-001",
+  "purpose": "Keep the office coffee machine stocked with beans and milk and book maintenance when due.",
+  "merchantIds": ["merchant-001"],
+  "categories": ["beans", "milk", "maintenance"],
+  "limits": {
+    "perOrder": { "amount": "100.00", "currency": "EUR" },
+    "perPeriod": { "amount": "250.00", "currency": "EUR" },
+    "period": "month",
+    "approvalAbove": { "amount": "75.00", "currency": "EUR" }
+  },
+  "validFrom": "2026-09-30T00:00:00Z",
+  "validUntil": "2026-12-31T23:59:59Z",
+  "status": "active",
+  "revokedAt": null,
+  "signature": { "signedBy": "consumer-001", "signedAt": "2026-09-29T09:00:00Z", "value": "SANDBOX-SIGNATURE-NOT-REAL" }
+}

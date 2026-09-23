@@ -1,0 +1,14 @@
+{
+  "requestId": "authreq-001",
+  "purchaseId": "purchase-001",
+  "mandateId": "mandate-001",
+  "agentId": "agent-001",
+  "agentSignature": "SANDBOX-SIGNATURE-NOT-REAL",
+  "merchantId": "merchant-001",
+  "offerId": "offer-001",
+  "sku": "beans-house-blend-1kg",
+  "category": "beans",
+  "quantity": 1,
+  "total": { "amount": "19.95", "currency": "EUR" },
+  "createdAt": "2026-10-01T08:00:00Z"
+}
