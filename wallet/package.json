@@ -4,9 +4,12 @@
   "private": true,
   "description": "Sandbox wallet showing the balances of linked fictional bank accounts",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node src/server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "consent": "node scripts/request-consent.js"
   }
 }
