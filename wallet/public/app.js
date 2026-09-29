@@ -1,5 +1,6 @@
-const format = ({ amount, currency }) =>
-  new Intl.NumberFormat('nl-NL', { style: 'currency', currency }).format(Number(amount));
+import { format } from './money-format.js';
+
+const CONSENT_POLL_MS = 2000;
 
 const el = (tag, className, text) => {
   const node = document.createElement(tag);
@@ -36,5 +37,18 @@ async function load() {
   }
 }
 
+// Open the fingerprint screen as soon as a payment consent is waiting.
+async function checkConsents() {
+  try {
+    const res = await fetch('/consent?status=awaiting_authentication');
+    const [pending] = res.ok ? await res.json() : [];
+    if (pending) location.assign(`/authenticate.html?consent=${encodeURIComponent(pending.id)}`);
+  } catch {
+    // Try again on the next poll.
+  }
+}
+
 document.getElementById('refresh').addEventListener('click', load);
 load();
+checkConsents();
+setInterval(checkConsents, CONSENT_POLL_MS);
