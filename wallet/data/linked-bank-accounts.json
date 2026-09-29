@@ -1,0 +1,23 @@
+{
+  "walletId": "wallet-sandbox-c001",
+  "ownerId": "consumer-001",
+  "ownerName": "Test Consumer",
+  "linkedBankAccounts": [
+    {
+      "id": "bank-acc-001",
+      "bankName": "Fictional Bank A",
+      "label": "Current account",
+      "iban": "NL00 FAKE 0000 0000 01",
+      "balance": { "amount": "1250.40", "currency": "EUR" },
+      "updatedAt": "2026-09-29T08:00:00Z"
+    },
+    {
+      "id": "bank-acc-002",
+      "bankName": "Fictional Bank B",
+      "label": "Savings account",
+      "iban": "NL00 FAKE 0000 0000 02",
+      "balance": { "amount": "4380.75", "currency": "EUR" },
+      "updatedAt": "2026-09-29T08:00:00Z"
+    }
+  ]
+}

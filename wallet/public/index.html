@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wero Wallet (sandbox)</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Wallet</h1>
+        <p id="owner" class="muted">Loading…</p>
+      </div>
+      <span class="badge">Sandbox · mock data</span>
+    </header>
+
+    <section class="total" aria-live="polite">
+      <p class="muted">Total balance</p>
+      <p id="total" class="amount">–</p>
+    </section>
+
+    <h2>Linked bank accounts</h2>
+    <ul id="accounts" class="accounts"></ul>
+    <p id="error" class="error" hidden></p>
+
+    <button id="refresh" type="button">Refresh balances</button>
+  </main>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

@@ -18,6 +18,7 @@ consumer-agent/      the instruction, the mandate request and the agent that act
 merchant/            catalogue, offer, order and delivery
 trust-layer/         mandate validation, agent identity, authorisation, audit trail
 wallet/              funds, limits and settlement on the sandbox
+  CLAUDE.md          stack and how to run the wallet app
 mock-data/           shared fictional data: the coffee machine, products, accounts
 ```
 
